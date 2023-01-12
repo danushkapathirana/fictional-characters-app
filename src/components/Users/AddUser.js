@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import Button from "../UI/Button";
 import Card from "../UI/Card";
@@ -21,7 +21,7 @@ const AddUser = (props) => {
         }
         if(+enteredAge < 1) {
             setError({
-                title: "Invalid age",
+                title: "Invalid Age",
                 message: "Please enter a valid age (age > 0)."
             })
             return
@@ -45,7 +45,7 @@ const AddUser = (props) => {
     }
 
     return(
-        <div>
+        <Fragment> {/**use Fragment instead of div, it does not render in the DOM, div does */}
             {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}/>}
             <Card className={classes.input}>
                 <form onSubmit={addUserHandler}>
@@ -56,7 +56,7 @@ const AddUser = (props) => {
                     <Button type="submit">Add User</Button>
                 </form>
             </Card>
-            </div>
+        </Fragment>
     )
 }
 
