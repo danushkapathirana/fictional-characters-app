@@ -1,4 +1,4 @@
-    import React, { Fragment, useState, useRef } from "react";
+import React, { Fragment, useState, useRef } from "react";
 
 import Button from "../UI/Button";
 import Card from "../UI/Card";
@@ -57,3 +57,6 @@ const AddUser = (props) => {
 }
 
 export default AddUser
+
+// whenever you use ref, it is uncontrolled, becz you are not feeding the current value back to the input field using value prop
+// whenever you are using state based solution, you can feed the current value to the input field, so it is controlled by React
